@@ -96,7 +96,7 @@ const CartDrawer = () => {
                           <span>{item.quantity}</span>
                           <button onClick={() => updateQuantity(item.id, 1)}><IconPlus size={14} /></button>
                         </div>
-                        <span className="cart-item__price">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="cart-item__price">Rs. {(item.price * item.quantity).toLocaleString()}</span>
                       </div>
                     </div>
                     <button className="cart-item__remove" onClick={() => removeFromCart(item.id)}>
@@ -139,27 +139,27 @@ const CartDrawer = () => {
             <div className="cart-totals">
               <div className="cart-total-row">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>Rs. {subtotal.toLocaleString()}</span>
               </div>
               {discount > 0 && (
                 <div className="cart-total-row cart-total-row--discount">
                   <span>Discount</span>
-                  <span>-${discount.toFixed(2)}</span>
+                  <span>-Rs. {discount.toLocaleString()}</span>
                 </div>
               )}
               <div className="cart-total-row">
                 <span>Shipping</span>
-                <span>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+                <span>{shipping === 0 ? 'Free' : `Rs. ${shipping.toLocaleString()}`}</span>
               </div>
               <div className="cart-total-row cart-total-row--total">
                 <span>Total</span>
-                <span>${cartTotal.toFixed(2)}</span>
+                <span>Rs. {cartTotal.toLocaleString()}</span>
               </div>
             </div>
 
             {/* Upsell */}
             <div className="cart-upsell" onClick={handleAddConditioner}>
-              <span>🧴 Add leather conditioner for only $12.99</span>
+              <span>🧴 Add leather conditioner for only Rs. 2,499</span>
               <span className="cart-upsell__add">+ Add</span>
             </div>
 

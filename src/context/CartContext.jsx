@@ -7,7 +7,7 @@ export const useCart = () => useContext(CartContext);
 const PROMO_CODES = {
   'CHAMRA10': { type: 'percent', value: 10, label: '10% off' },
   'LEATHER20': { type: 'percent', value: 20, label: '20% off' },
-  'NEWCLIENT': { type: 'fixed', value: 5, label: '$5 off' },
+  'NEWCLIENT': { type: 'fixed', value: 1000, label: 'Rs. 1,000 off' },
   'BUNDLE15': { type: 'percent', value: 15, label: '15% off bundle' },
 };
 
@@ -124,7 +124,7 @@ export const CartProvider = ({ children }) => {
       : promoCode.value
     : 0;
 
-  const shipping = subtotal > 50 ? 0 : 8.99;
+  const shipping = subtotal > 10000 ? 0 : 500;
   const cartTotal = Math.max(0, subtotal - discount + shipping);
   const cartCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 

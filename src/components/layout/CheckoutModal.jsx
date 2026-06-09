@@ -169,12 +169,12 @@ const CheckoutModal = ({ isOpen, onClose }) => {
               {cartItems.map(item => (
                 <div key={item.id} className="co-summary-item">
                   <span>{item.name} × {item.quantity}</span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                  <span>Rs. {(item.price * item.quantity).toLocaleString()}</span>
                 </div>
               ))}
               <div className="co-summary-total">
                 <span>Total Paid</span>
-                <span className="text-gold">${cartTotal.toFixed(2)}</span>
+                <span className="text-gold">Rs. {cartTotal.toLocaleString()}</span>
               </div>
             </motion.div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '1rem' }}>

@@ -16,9 +16,9 @@ import './Home.css';
 
 /* ---- Data ---- */
 const heroProducts = [
-  { id: 1, name: "Classic Dress Belt", price: "$34.99", img: beltImg, badge: "Best Seller" },
-  { id: 2, name: "Vintage Bifold Wallet", price: "$39.99", img: walletImg, badge: "New Arrival" },
-  { id: 3, name: "Structured Tote", price: "$89.99", img: handbagImg, badge: "Premium" },
+  { id: 1, name: "Classic Dress Belt", price: "Rs. 4,999", img: beltImg, badge: "Best Seller" },
+  { id: 2, name: "Vintage Bifold Wallet", price: "Rs. 5,499", img: walletImg, badge: "New Arrival" },
+  { id: 3, name: "Structured Tote", price: "Rs. 12,999", img: handbagImg, badge: "Premium" },
 ];
 
 const features = [
@@ -30,10 +30,10 @@ const features = [
 ];
 
 const featuredProducts = [
-  { id: 1, name: "Classic Dress Belt", category: "Belts", price: 34.99, img: beltImg },
-  { id: 2, name: "Vintage Bifold Wallet", category: "Wallets", price: 39.99, img: walletImg },
-  { id: 3, name: "Structured Tote", category: "Handbags", price: 89.99, img: handbagImg },
-  { id: 4, name: "Weekend Duffel", category: "Travel Bags", price: 119.99, img: travelbagImg },
+  { id: 1, name: "Classic Dress Belt", category: "Belts", price: 4999, img: beltImg },
+  { id: 2, name: "Vintage Bifold Wallet", category: "Wallets", price: 5499, img: walletImg },
+  { id: 3, name: "Structured Tote", category: "Handbags", price: 12999, img: handbagImg },
+  { id: 4, name: "Weekend Duffel", category: "Travel Bags", price: 17999, img: travelbagImg },
 ];
 
 const stats = [
@@ -61,9 +61,9 @@ const faqs = [
   { q: "Can I customize any product with my name or signature?", a: "Absolutely. Our Customization Studio lets you choose leather color, texture, hardware finish, stitching color, and add your name engraving or hand-drawn signature. A live preview updates in real time." },
   { q: "How do I use the QR authentication card?", a: "Scan the QR code on your product tag using any smartphone camera. Enter the product code on our /verify page to see full leather grade, batch info, and lab testing details." },
   { q: "What is the Chamra Care Leather Conditioner?", a: "It's our specially formulated conditioner that restores natural oils and shine to your leather products. Apply every 3–6 months to prevent cracking and maintain that rich, brand-new look." },
-  { q: "Do you ship internationally?", a: "Yes, we ship to 15+ countries. Orders over $50 receive free shipping within Pakistan. International shipping rates apply at checkout." },
+  { q: "Do you ship internationally?", a: "Yes, we ship to 15+ countries. Orders over Rs. 10,000 receive free shipping within Pakistan. International shipping rates apply at checkout." },
   { q: "What is your return policy?", a: "We offer a 14-day return window for unused, non-customized products. Customized items are non-refundable as they are made to order." },
-  { q: "How long does a customized order take?", a: "Standard customized orders take 5–7 business days to produce and ship. Rush processing (2–3 days) is available for an additional $15." },
+  { q: "How long does a customized order take?", a: "Standard customized orders take 5–7 business days to produce and ship. Rush processing (2–3 days) is available for an additional Rs. 2,500." },
   { q: "What payment methods do you accept?", a: "We accept all major credit/debit cards, bank transfers, and EasyPaisa/JazzCash for Pakistan-based customers." },
 ];
 
@@ -167,7 +167,7 @@ const Home = () => {
               <span>🏆 100% Genuine Leather</span>
               <span>✦ Handcrafted</span>
               <span>🔐 QR Authenticated</span>
-              <span className="hide-mobile">🚚 Free Shipping Over $50</span>
+              <span className="hide-mobile">🚚 Free Shipping Over Rs. 10,000</span>
             </motion.div>
           </motion.div>
 
@@ -249,7 +249,7 @@ const Home = () => {
                   <span className="featured-card__cat">{p.category.toUpperCase()}</span>
                   <h3>{p.name}</h3>
                   <div className="featured-card__bottom">
-                    <span className="featured-card__price">${p.price.toFixed(2)}</span>
+                    <span className="featured-card__price">Rs. {p.price.toLocaleString()}</span>
                     <span className="featured-card__link">Shop Now →</span>
                   </div>
                 </div>
