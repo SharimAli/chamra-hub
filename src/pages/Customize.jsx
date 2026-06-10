@@ -52,6 +52,27 @@ const hardwareOptions = ['Gold', 'Silver', 'Antique Bronze', 'Gunmetal'];
 const textures        = ['Smooth Full-Grain', 'Pebbled', 'Vintage Distressed', 'Crocodile Emboss'];
 const fonts           = ['Classic Serif', 'Script', 'Block'];
 
+const sigFonts = [
+  { name: 'Cursive Script', css: "'Dancing Script', cursive",   preview: '𝓐𝓑𝓒' },
+  { name: 'Elegant Italic', css: "Georgia, serif",               preview: 'ABC' },
+  { name: 'Bold Block',     css: "'Courier New', monospace",     preview: 'ABC' },
+  { name: 'Modern Sans',    css: "'Arial', sans-serif",          preview: 'ABC' },
+  { name: 'Classic Serif',  css: "'Times New Roman', serif",     preview: 'ABC' },
+];
+
+const sigSizes = [
+  { name: 'S', label: 'Small',  fs: '1rem'  },
+  { name: 'M', label: 'Medium', fs: '1.4rem' },
+  { name: 'L', label: 'Large',  fs: '1.9rem' },
+];
+
+const sigInkColors = [
+  { name: 'Gold',   hex: '#C9973F' },
+  { name: 'Silver', hex: '#B8B8B8' },
+  { name: 'White',  hex: '#F5EDD8' },
+  { name: 'Black',  hex: '#1a1a1a' },
+];
+
 const stitchColors = [
   { name: 'Cream',  hex: '#F5EDD8' },
   { name: 'Black',  hex: '#111'    },
@@ -72,6 +93,9 @@ const Customize = () => {
   const [engraving,   setEngraving  ] = useState('');
   const [font,        setFont       ] = useState('Classic Serif');
   const [signature,   setSignature  ] = useState('');
+  const [sigFont,     setSigFont    ] = useState(0);
+  const [sigSize,     setSigSize    ] = useState(1);
+  const [sigInk,      setSigInk     ] = useState(0);
   const [addons,      setAddons     ] = useState({ conditioner: false, giftBox: false, qrCard: true });
   const [qty,         setQty        ] = useState(1);
 
@@ -191,19 +215,72 @@ const Customize = () => {
             </div>
           </div>
 
-          {/* 7. Signature (keyboard) */}
+          {/* 7. Signature Style */}
           <div className="control-group">
             <h3>7. Signature Style <span className="price-tag">+Rs. 2,000</span></h3>
-            <p className="control-hint">Type your name — it will appear in cursive on the product</p>
+            <p className="control-hint">Type your name — it will appear as a signature on the product</p>
             <input
-              className="input sig-input"
+              className="input"
               maxLength={30}
               placeholder="e.g. Ahmed Khan"
               value={signature}
               onChange={e => setSignature(e.target.value)}
             />
+
+            {/* Font Style */}
+            <p className="sig-option-label">Font Style</p>
+            <div className="sig-font-grid">
+              {sigFonts.map((f, i) => (
+                <button
+                  key={i}
+                  className={`sig-font-btn ${sigFont === i ? 'active' : ''}`}
+                  onClick={() => setSigFont(i)}
+                  style={{ fontFamily: f.css }}
+                >
+                  <span className="sig-font-sample" style={{ fontFamily: f.css }}>Aa</span>
+                  <span className="sig-font-name">{f.name}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Size */}
+            <p className="sig-option-label">Size</p>
+            <div className="radio-pills">
+              {sigSizes.map((s, i) => (
+                <button key={i} className={`pill ${sigSize === i ? 'active' : ''}`} onClick={() => setSigSize(i)}>
+                  {s.name} — {s.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Ink Color */}
+            <p className="sig-option-label">Ink Color</p>
+            <div className="color-swatches">
+              {sigInkColors.map((c, i) => (
+                <button
+                  key={i}
+                  className={`swatch ${sigInk === i ? 'active' : ''}`}
+                  style={{ background: c.hex, border: c.name === 'White' ? '2px solid #555' : '' }}
+                  title={c.name}
+                  onClick={() => setSigInk(i)}
+                >
+                  {sigInk === i && <span className="swatch-check" style={{ color: c.name === 'White' ? '#333' : '#fff' }}>✓</span>}
+                </button>
+              ))}
+            </div>
+
+            {/* Live preview of sig */}
             {signature && (
-              <p className="sig-preview-text">{signature}</p>
+              <div
+                className="sig-live-preview"
+                style={{
+                  fontFamily: sigFonts[sigFont].css,
+                  fontSize:   sigSizes[sigSize].fs,
+                  color:      sigInkColors[sigInk].hex,
+                }}
+              >
+                {signature}
+              </div>
             )}
           </div>
 
@@ -265,10 +342,19 @@ const Customize = () => {
               </div>
             )}
 
-            {/* Signature overlay */}
+            {/* Signature overlay — reflects font/size/ink choices */}
             {signature && (
               <div className="preview-sig-wrap">
-                <span className="preview-sig-text">{signature}</span>
+                <span
+                  className="preview-sig-text"
+                  style={{
+                    fontFamily: sigFonts[sigFont].css,
+                    fontSize:   sigSizes[sigSize].fs,
+                    color:      sigInkColors[sigInk].hex,
+                  }}
+                >
+                  {signature}
+                </span>
               </div>
             )}
           </div>

@@ -177,24 +177,67 @@
   border-color: var(--color-gold);
 }
 
-/* ── Signature ── */
-.sig-input {
-  font-family: var(--font-script), cursive;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+/* ── Signature options ── */
+.sig-option-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0.85rem 0 0.4rem;
+  font-weight: 600;
 }
 
-.sig-preview-text {
-  margin-top: 0.5rem;
-  font-family: var(--font-script), cursive;
-  font-size: 1.6rem;
+.sig-font-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.sig-font-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.55rem 0.3rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.sig-font-btn:hover { border-color: var(--color-gold); }
+.sig-font-btn.active {
+  border-color: var(--color-gold);
+  background: rgba(201, 151, 63, 0.1);
   color: var(--color-gold);
-  padding: 0.5rem 1rem;
-  background: rgba(201, 151, 63, 0.08);
+}
+
+.sig-font-sample {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.sig-font-name {
+  font-size: 0.65rem;
+  text-align: center;
+  color: inherit;
+  font-family: var(--font-body) !important;
+  line-height: 1.2;
+}
+
+.sig-live-preview {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(201, 151, 63, 0.07);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-sm);
-  letter-spacing: 2px;
   text-align: center;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  word-break: break-word;
 }
 
 /* ── Add-ons ── */
@@ -407,7 +450,10 @@
     letter-spacing: 2px;
   }
   .preview-sig-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .sig-font-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .sig-preview-text {
     font-size: 1.3rem;
