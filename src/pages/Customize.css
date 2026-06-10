@@ -280,9 +280,9 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-gold);
   overflow: hidden;
-  background: var(--bg-primary);
+  background: #0d0d0f;
 }
 
 .preview-img {
