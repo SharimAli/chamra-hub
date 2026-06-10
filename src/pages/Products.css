@@ -177,20 +177,28 @@
   z-index: var(--z-modal);
 }
 
-.qv-modal {
+.qv-wrap {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: calc(var(--z-modal) + 1);
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.qv-modal {
+  width: 100%;
   max-width: 850px;
   max-height: 90vh;
   overflow-y: auto;
   background: var(--bg-card);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-xl);
-  z-index: calc(var(--z-modal) + 1);
   box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  position: relative;
 }
 
 .qv-close {

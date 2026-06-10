@@ -7,6 +7,12 @@ import beltImg from '../assets/belt.png';
 import walletImg from '../assets/wallet.png';
 import handbagImg from '../assets/handbag.png';
 import travelbagImg from '../assets/travelbag.png';
+import braidedBeltImg from '../assets/braided-belt.png';
+import cardHolderImg from '../assets/card-holder.png';
+import crossbodySatchelImg from '../assets/crossbody-satchel.png';
+import laptopBriefcaseImg from '../assets/laptop-briefcase.png';
+import reversibleBeltImg from '../assets/reversible-belt.png';
+import monogramWalletImg from '../assets/monogram-wallet.png';
 import { useSearchParams } from 'react-router-dom';
 import './Products.css';
 
@@ -15,12 +21,12 @@ const products = [
   { id: 2, name: "Vintage Bifold Wallet", category: "Wallets", price: 5499, img: walletImg, desc: "Tobacco brown with fine hand-stitching detail", rating: 5, reviews: 62 },
   { id: 3, name: "Structured Tote", category: "Handbags", price: 12999, img: handbagImg, desc: "Chestnut brown with gold-plated hardware", rating: 4.5, reviews: 35 },
   { id: 4, name: "Weekend Duffel", category: "Travel Bags", price: 17999, img: travelbagImg, desc: "Dark espresso leather, spacious interior", rating: 5, reviews: 29 },
-  { id: 5, name: "Braided Leather Belt", category: "Belts", price: 5999, img: beltImg, desc: "Intricate dark brown braided design", rating: 4, reviews: 31 },
-  { id: 6, name: "RFID Card Holder", category: "Wallets", price: 3499, img: walletImg, desc: "Minimalist dark brown with RFID blocking", rating: 4.5, reviews: 55 },
-  { id: 7, name: "Crossbody Satchel", category: "Handbags", price: 10999, img: handbagImg, desc: "Burgundy with adjustable shoulder strap", rating: 5, reviews: 41 },
-  { id: 8, name: "Laptop Briefcase", category: "Travel Bags", price: 19999, img: travelbagImg, desc: "Espresso brown, padded laptop compartment", rating: 4.5, reviews: 22 },
-  { id: 9, name: "Reversible Business Belt", category: "Belts", price: 6999, img: beltImg, desc: "Black/brown reversible with rotating buckle", rating: 4.5, reviews: 37 },
-  { id: 10, name: "Monogram Bifold", category: "Wallets", price: 5499, img: walletImg, desc: "Black leather with gold monogram accent", rating: 5, reviews: 44 },
+  { id: 5, name: "Braided Leather Belt", category: "Belts", price: 5999, img: braidedBeltImg, desc: "Intricate dark brown braided design", rating: 4, reviews: 31 },
+  { id: 6, name: "RFID Card Holder", category: "Wallets", price: 3499, img: cardHolderImg, desc: "Minimalist dark brown with RFID blocking", rating: 4.5, reviews: 55 },
+  { id: 7, name: "Crossbody Satchel", category: "Handbags", price: 10999, img: crossbodySatchelImg, desc: "Burgundy with adjustable shoulder strap", rating: 5, reviews: 41 },
+  { id: 8, name: "Laptop Briefcase", category: "Travel Bags", price: 19999, img: laptopBriefcaseImg, desc: "Espresso brown, padded laptop compartment", rating: 4.5, reviews: 22 },
+  { id: 9, name: "Reversible Business Belt", category: "Belts", price: 6999, img: reversibleBeltImg, desc: "Black/brown reversible with rotating buckle", rating: 4.5, reviews: 37 },
+  { id: 10, name: "Monogram Bifold", category: "Wallets", price: 5499, img: monogramWalletImg, desc: "Black leather with gold monogram accent", rating: 5, reviews: 44 },
 ];
 
 const categories = ['All', 'Belts', 'Wallets', 'Handbags', 'Travel Bags'];
@@ -137,11 +143,12 @@ const Products = () => {
               exit={{ opacity: 0 }}
               onClick={() => setQuickView(null)}
             />
+            <div className="qv-wrap">
             <motion.div
               className="qv-modal"
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.3 }}
             >
               <button className="qv-close" onClick={() => setQuickView(null)}><IconX size={22} /></button>
@@ -174,6 +181,7 @@ const Products = () => {
                 </div>
               </div>
             </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>
