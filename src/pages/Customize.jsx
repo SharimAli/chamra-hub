@@ -3,37 +3,42 @@ import { useCart } from '../context/CartContext';
 import ScrollReveal from '../components/ui/ScrollReveal';
 
 // Belt color images
-import beltBlackImg from '../assets/belt-black.png';
+import beltBlackImg    from '../assets/belt-black.png';
 import beltEspressoImg from '../assets/belt-espresso.png';
-import beltTanImg from '../assets/belt-tan.png';
-import beltCognacImg from '../assets/belt-cognac.png';
+import beltTanImg      from '../assets/belt-tan.png';
+import beltCognacImg   from '../assets/belt-cognac.png';
 import beltBurgundyImg from '../assets/belt-burgundy.png';
 
 // Wallet color images
-import walletBlackImg from '../assets/wallet-black.png';
+import walletBlackImg    from '../assets/wallet-black.png';
 import walletEspressoImg from '../assets/wallet-espresso.png';
-import walletTanImg from '../assets/wallet-tan.png';
-import walletCognacImg from '../assets/wallet-cognac.png';
+import walletTanImg      from '../assets/wallet-tan.png';
+import walletCognacImg   from '../assets/wallet-cognac.png';
 import walletBurgundyImg from '../assets/wallet-burgundy.png';
 
 // Handbag color images
-import handbagBlackImg from '../assets/handbag-black.png';
-import handbagTanImg from '../assets/handbag-tan.png';
+import handbagBlackImg    from '../assets/handbag-black.png';
+import handbagEspressoImg from '../assets/handbag-espresso.png';
+import handbagTanImg      from '../assets/handbag-tan.png';
+import handbagCognacImg   from '../assets/handbag-cognac.png';
 import handbagBurgundyImg from '../assets/handbag-burgundy.png';
 
-// Travel bag color images
-import travelbagBlackImg from '../assets/travelbag-black.png';
-import travelbagTanImg from '../assets/travelbag-tan.png';
+// Travel Bag color images
+import travelbagBlackImg    from '../assets/travelbag-black.png';
+import travelbagEspressoImg from '../assets/travelbag-espresso.png';
+import travelbagTanImg      from '../assets/travelbag-tan.png';
+import travelbagCognacImg   from '../assets/travelbag-cognac.png';
+import travelbagBurgundyImg from '../assets/travelbag-burgundy.png';
 
 import './Customize.css';
 
-/* ─── Color options with real images per product ─── */
+/* ─── Every color has a unique real image for every product ─── */
 const colors = [
-  { name: 'Jet Black',      hex: '#111111', images: { Belt: beltBlackImg,    Wallet: walletBlackImg,    Handbag: handbagBlackImg,  'Travel Bag': travelbagBlackImg } },
-  { name: 'Dark Espresso',  hex: '#2c1a0a', images: { Belt: beltEspressoImg, Wallet: walletEspressoImg, Handbag: handbagBlackImg,  'Travel Bag': travelbagBlackImg } },
-  { name: 'Vintage Tan',    hex: '#b57b4c', images: { Belt: beltTanImg,      Wallet: walletTanImg,      Handbag: handbagTanImg,    'Travel Bag': travelbagTanImg  } },
-  { name: 'Cognac',         hex: '#8a4b26', images: { Belt: beltCognacImg,   Wallet: walletCognacImg,   Handbag: handbagTanImg,    'Travel Bag': travelbagTanImg  } },
-  { name: 'Burgundy',       hex: '#5e2129', images: { Belt: beltBurgundyImg, Wallet: walletBurgundyImg, Handbag: handbagBurgundyImg,'Travel Bag': travelbagBlackImg} },
+  { name: 'Jet Black',     hex: '#111111', images: { Belt: beltBlackImg,    Wallet: walletBlackImg,    Handbag: handbagBlackImg,    'Travel Bag': travelbagBlackImg    } },
+  { name: 'Dark Espresso', hex: '#2c1a0a', images: { Belt: beltEspressoImg, Wallet: walletEspressoImg, Handbag: handbagEspressoImg, 'Travel Bag': travelbagEspressoImg } },
+  { name: 'Vintage Tan',   hex: '#b57b4c', images: { Belt: beltTanImg,      Wallet: walletTanImg,      Handbag: handbagTanImg,      'Travel Bag': travelbagTanImg      } },
+  { name: 'Cognac',        hex: '#8a4b26', images: { Belt: beltCognacImg,   Wallet: walletCognacImg,   Handbag: handbagCognacImg,   'Travel Bag': travelbagCognacImg   } },
+  { name: 'Burgundy',      hex: '#5e2129', images: { Belt: beltBurgundyImg, Wallet: walletBurgundyImg, Handbag: handbagBurgundyImg, 'Travel Bag': travelbagBurgundyImg } },
 ];
 
 const productTypes = [
