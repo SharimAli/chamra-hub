@@ -17,16 +17,16 @@ import { useSearchParams } from 'react-router-dom';
 import './Products.css';
 
 const products = [
-  { id: 1, name: "Classic Dress Belt", category: "Belts", price: 4999, img: beltImg, desc: "Smooth black full-grain leather with polished buckle", rating: 4.5, reviews: 48 },
-  { id: 2, name: "Vintage Bifold Wallet", category: "Wallets", price: 5499, img: walletImg, desc: "Tobacco brown with fine hand-stitching detail", rating: 5, reviews: 62 },
-  { id: 3, name: "Structured Tote", category: "Handbags", price: 12999, img: handbagImg, desc: "Chestnut brown with gold-plated hardware", rating: 4.5, reviews: 35 },
-  { id: 4, name: "Weekend Duffel", category: "Travel Bags", price: 17999, img: travelbagImg, desc: "Dark espresso leather, spacious interior", rating: 5, reviews: 29 },
-  { id: 5, name: "Braided Leather Belt", category: "Belts", price: 5999, img: braidedBeltImg, desc: "Intricate dark brown braided design", rating: 4, reviews: 31 },
-  { id: 6, name: "RFID Card Holder", category: "Wallets", price: 3499, img: cardHolderImg, desc: "Minimalist dark brown with RFID blocking", rating: 4.5, reviews: 55 },
-  { id: 7, name: "Crossbody Satchel", category: "Handbags", price: 10999, img: crossbodySatchelImg, desc: "Burgundy with adjustable shoulder strap", rating: 5, reviews: 41 },
-  { id: 8, name: "Laptop Briefcase", category: "Travel Bags", price: 19999, img: laptopBriefcaseImg, desc: "Espresso brown, padded laptop compartment", rating: 4.5, reviews: 22 },
-  { id: 9, name: "Reversible Business Belt", category: "Belts", price: 6999, img: reversibleBeltImg, desc: "Black/brown reversible with rotating buckle", rating: 4.5, reviews: 37 },
-  { id: 10, name: "Monogram Bifold", category: "Wallets", price: 5499, img: monogramWalletImg, desc: "Black leather with gold monogram accent", rating: 5, reviews: 44 },
+  { id: 1, name: "Classic Dress Belt", category: "Belts", price: 2000, img: beltImg, desc: "Smooth black full-grain leather with polished buckle", rating: 4.5, reviews: 48 },
+  { id: 2, name: "Vintage Bifold Wallet", category: "Wallets", price: 3000, img: walletImg, desc: "Tobacco brown with fine hand-stitching detail", rating: 5, reviews: 62 },
+  { id: 3, name: "Structured Tote", category: "Handbags", price: 10000, img: handbagImg, desc: "Chestnut brown with gold-plated hardware", rating: 4.5, reviews: 35 },
+  { id: 4, name: "Weekend Duffel", category: "Travel Bags", price: 15000, img: travelbagImg, desc: "Dark espresso leather, spacious interior", rating: 5, reviews: 29 },
+  { id: 5, name: "Braided Leather Belt", category: "Belts", price: 2500, img: braidedBeltImg, desc: "Intricate dark brown braided design", rating: 4, reviews: 31 },
+  { id: 6, name: "RFID Card Holder", category: "Wallets", price: 2500, img: cardHolderImg, desc: "Minimalist dark brown with RFID blocking", rating: 4.5, reviews: 55 },
+  { id: 7, name: "Crossbody Satchel", category: "Handbags", price: 10000, img: crossbodySatchelImg, desc: "Burgundy with adjustable shoulder strap", rating: 5, reviews: 41 },
+  { id: 8, name: "Laptop Briefcase", category: "Travel Bags", price: 15000, img: laptopBriefcaseImg, desc: "Espresso brown, padded laptop compartment", rating: 4.5, reviews: 22 },
+  { id: 9, name: "Reversible Business Belt", category: "Belts", price: 2500, img: reversibleBeltImg, desc: "Black/brown reversible with rotating buckle", rating: 4.5, reviews: 37 },
+  { id: 10, name: "Monogram Bifold", category: "Wallets", price: 3500, img: monogramWalletImg, desc: "Black leather with gold monogram accent", rating: 5, reviews: 44 },
 ];
 
 const categories = ['All', 'Belts', 'Wallets', 'Handbags', 'Travel Bags'];

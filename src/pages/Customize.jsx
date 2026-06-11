@@ -42,10 +42,10 @@ const colors = [
 ];
 
 const productTypes = [
-  { type: 'Belt',       base: 5499  },
-  { type: 'Wallet',     base: 6999  },
-  { type: 'Handbag',    base: 12999 },
-  { type: 'Travel Bag', base: 17999 },
+  { type: 'Belt',       base: 2000  },
+  { type: 'Wallet',     base: 3000  },
+  { type: 'Handbag',    base: 10000 },
+  { type: 'Travel Bag', base: 15000 },
 ];
 
 const hardwareOptions = ['Gold', 'Silver', 'Antique Bronze', 'Gunmetal'];
@@ -101,9 +101,9 @@ const Customize = () => {
 
   /* ── Pricing (PKR) ── */
   const base           = productTypes[productType].base;
-  const engravingPrice = engraving  ? 1500 : 0;
-  const signaturePrice = signature  ? 2000 : 0;
-  const addonTotal     = (addons.conditioner ? 2499 : 0) + (addons.giftBox ? 999 : 0) + (addons.qrCard ? 499 : 0);
+  const engravingPrice = engraving  ? 500 : 0;
+  const signaturePrice = signature  ? 700 : 0;
+  const addonTotal     = (addons.conditioner ? 1000 : 0) + (addons.giftBox ? 700 : 0);
   const unitTotal      = base + engravingPrice + signaturePrice + addonTotal;
   const total          = unitTotal * qty;
 
@@ -200,7 +200,7 @@ const Customize = () => {
 
           {/* 6. Engraving */}
           <div className="control-group">
-            <h3>6. Name Engraving <span className="price-tag">+Rs. 1,500</span></h3>
+            <h3>6. Name Engraving <span className="price-tag">+Rs. 500</span></h3>
             <input
               className="input"
               maxLength={20}
@@ -217,7 +217,7 @@ const Customize = () => {
 
           {/* 7. Signature Style */}
           <div className="control-group">
-            <h3>7. Signature Style <span className="price-tag">+Rs. 2,000</span></h3>
+            <h3>7. Signature Style <span className="price-tag">+Rs. 700</span></h3>
             <p className="control-hint">Type your name — it will appear as a signature on the product</p>
             <input
               className="input"
@@ -289,15 +289,15 @@ const Customize = () => {
             <h3>8. Add-Ons</h3>
             <label className="addon-check">
               <input type="checkbox" checked={addons.conditioner} onChange={() => setAddons(p => ({ ...p, conditioner: !p.conditioner }))} />
-              Leather Conditioner <span className="price-tag">+Rs. 2,499</span>
+              Leather Conditioner <span className="price-tag">+Rs. 1,000</span>
             </label>
             <label className="addon-check">
               <input type="checkbox" checked={addons.giftBox} onChange={() => setAddons(p => ({ ...p, giftBox: !p.giftBox }))} />
-              Premium Gift Box <span className="price-tag">+Rs. 999</span>
+              Premium Gift Box <span className="price-tag">+Rs. 700</span>
             </label>
             <label className="addon-check">
               <input type="checkbox" checked={addons.qrCard} onChange={() => setAddons(p => ({ ...p, qrCard: !p.qrCard }))} />
-              QR Auth Card <span className="price-tag">+Rs. 499</span>
+              QR Authenticity Card <span className="price-tag">FREE</span>
             </label>
           </div>
 
